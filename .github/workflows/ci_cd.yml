@@ -32,4 +32,4 @@ jobs:
       run: docker build -t ci_cd_app .
 
     - name: Run Django tests inside Docker container
-      run: docker run --rm ci_cd_app
+      run: docker run --rm -v ${{ github.workspace }}/.env:/app/.env ci_cd_app
